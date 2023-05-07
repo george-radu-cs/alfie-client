@@ -8,11 +8,11 @@ int computeCardScore(DeckCard deckCard) {
 
   Duration timeSinceLastReview;
   if (deckCard.lastReviewTimestamp == null) {
-    // card was never reviewd, take consider the time from the last update
+    // card was never reviewd, so we consider the time from the last update as the last review timestamp
     timeSinceLastReview = DateTime.now().difference(deckCard.updatedAtTimestamp);
-    score += 100;
+    score += timeSinceLastReview.inDays;
   } else {
-    // card was reviewd at least once
+    // the card was reviewd at least once
     timeSinceLastReview = DateTime.now().difference(deckCard.lastReviewTimestamp!);
     score += timeSinceLastReview.inDays;
   }
@@ -22,7 +22,7 @@ int computeCardScore(DeckCard deckCard) {
     score -= 200 * (30 - timeSinceLastReview.inMinutes);
   }
 
-  // consider how the user thought about this card last time
+  // consider how the user thought about this card last time and how long ago it was
   switch (deckCard.lastReviewRating) {
     case CardReviewRating.easy:
       if (timeSinceLastReview.inDays < 7) {
@@ -41,8 +41,9 @@ int computeCardScore(DeckCard deckCard) {
     case CardReviewRating.hard:
       if (timeSinceLastReview.inHours < 2) {
         score -= 50;
+      } else {
+        score += 90;
       }
-      score += 90;
       break;
     default:
       score += 40;
@@ -51,12 +52,14 @@ int computeCardScore(DeckCard deckCard) {
 
   // consider the number of reviews this user gave to this card
   if (deckCard.reviews.isEmpty) {
-    score += 50;
+    // no reviews yet, give a little boost
+    score += 100;
   } else {
+    // penalize cards with many reviews
     score -= deckCard.reviews.length * 2;
   }
 
-  // also add a little randomness to diversify the cards with approximative scores
+  // also add a little randomness to diversify the cards with approximative scores, range [-20, 20]
   score += Random().nextInt(41) - 20;
 
   return score;

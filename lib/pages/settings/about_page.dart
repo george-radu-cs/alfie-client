@@ -51,7 +51,7 @@ class _AboutPageState extends State<AboutPage> {
               ),
               const Divider(),
               TextButton(
-                onPressed: () => openExternalUrl(githubLink),
+                onPressed: () => openExternalUrl(clientSourceCode),
                 child: Row(children: [
                   Icon(
                     Icons.code_outlined,
@@ -60,7 +60,23 @@ class _AboutPageState extends State<AboutPage> {
                   ),
                   const SizedBox(width: 10),
                   Text(
-                    LanguageService.translation(context).sourceCode,
+                    LanguageService.translation(context).clientSourceCode,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ]),
+              ),
+              const Divider(),
+              TextButton(
+                onPressed: () => openExternalUrl(clientSourceCode),
+                child: Row(children: [
+                  Icon(
+                    Icons.code_outlined,
+                    color: Theme.of(context).colorScheme.primary,
+                    size: 30,
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    LanguageService.translation(context).cloudServicesSourceCode,
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ]),

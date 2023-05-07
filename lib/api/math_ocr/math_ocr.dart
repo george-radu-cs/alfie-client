@@ -1,12 +1,11 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
-const String mathOcrURIStringified = "http://10.0.2.2:8185/ocr/image-to-tex";
-
 class MathOcrClient {
-  final Uri mathOcrURI = Uri.parse(mathOcrURIStringified);
+  final Uri mathOcrURI = Uri.parse(dotenv.env["MATH_OCR_URI"]!);
 
   MathOcrClient._privateConstructor();
   static final MathOcrClient instance = MathOcrClient._privateConstructor();
