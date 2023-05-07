@@ -58,7 +58,7 @@ class _ReviewsRatingPieChartState extends State<ReviewsRatingPieChart> {
           return PieChartSectionData(
             color: ThemeService.easyCardRatingColor,
             value: numberOfEasyReviews.toDouble(),
-            title: "${(numberOfEasyReviews / widget.reviews.length * 100).toStringAsFixed(2)}%",
+            title: "${(numberOfEasyReviews / reviews.length * 100).toStringAsFixed(2)}%",
             radius: radius,
             titleStyle: TextStyle(color: Colors.black, fontSize: fontSize),
           );
@@ -66,7 +66,7 @@ class _ReviewsRatingPieChartState extends State<ReviewsRatingPieChart> {
           return PieChartSectionData(
             color: ThemeService.goodCardRatingColor,
             value: numberOfMediumReviews.toDouble(),
-            title: "${(numberOfMediumReviews / widget.reviews.length * 100).toStringAsFixed(2)}%",
+            title: "${(numberOfMediumReviews / reviews.length * 100).toStringAsFixed(2)}%",
             radius: radius,
             titleStyle: TextStyle(color: Colors.black, fontSize: fontSize),
           );
@@ -74,7 +74,7 @@ class _ReviewsRatingPieChartState extends State<ReviewsRatingPieChart> {
           return PieChartSectionData(
             color: ThemeService.hardCardRatingColor,
             value: numberOfHardReviews.toDouble(),
-            title: "${(numberOfHardReviews / widget.reviews.length * 100).toStringAsFixed(2)}%",
+            title: "${(numberOfHardReviews / reviews.length * 100).toStringAsFixed(2)}%",
             radius: radius,
             titleStyle: TextStyle(color: Colors.black, fontSize: fontSize),
           );
