@@ -92,8 +92,10 @@ class _ViewDeckBackState extends State<ViewDeckBack> {
                     selectAnswerCallback: widget.selectAnswerCallback,
                   )
                 : Container(
-                    constraints: BoxConstraints(
-                        minWidth: double.infinity, minHeight: 0, maxHeight: MediaQuery.of(context).size.height * .4),
+                    constraints: const BoxConstraints(
+                      minWidth: double.infinity,
+                      minHeight: 0,
+                    ),
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       border: Border.all(color: Theme.of(context).colorScheme.primary, width: 3),

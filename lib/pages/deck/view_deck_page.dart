@@ -36,8 +36,6 @@ class _ViewDeckPageState extends State<ViewDeckPage> {
 
   Future<PreviewDeck> getPreviewDeck() async {
     _loading.value = true;
-    // delay 1s
-    await Future.delayed(const Duration(seconds: 1));
     Deck deck = await DeckService.instance.getDeckById(widget.deckId);
     int numberOfCards = await DeckCardService.instance.getDeckCardsCount(widget.deckId);
     int numberOfReviews = await CardReviewService.instance.getNumberOfCardReviewsForDeckId(widget.deckId);

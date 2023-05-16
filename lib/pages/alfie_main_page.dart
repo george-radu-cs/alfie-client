@@ -21,7 +21,7 @@ class _AlfieMainPageState extends State<AlfieMainPage> {
   Widget build(BuildContext context) {
     List pages = [
       PageRouteData(LanguageService.translation(context).homePage, Icons.library_books_outlined, const UserDecksPage()),
-      PageRouteData(LanguageService.translation(context).deckMarket, Icons.shop_outlined, const MarketPage()),
+      // PageRouteData(LanguageService.translation(context).deckMarket, Icons.shop_outlined, const MarketPage()),
       PageRouteData(LanguageService.translation(context).accountAndSettings, Icons.perm_identity_outlined,
           const AccountSettingsPage()),
     ];

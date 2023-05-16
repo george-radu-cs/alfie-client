@@ -226,48 +226,50 @@ class _StudyDeckPageState extends State<StudyDeckPage> {
                     flex: 1,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-                      child: Column(
-                        children: [
-                          Visibility(
-                              visible: !showAnswer && cardToReview.timeToAnswer.inMilliseconds > 0,
-                              child: Padding(
-                                padding: const EdgeInsets.fromLTRB(0, 5, 0, 10),
-                                child: Text(LanguageService.translation(context).timeToAnswer +
-                                    convertSecondsToMinutesAndSecondsString(_timeRemainingToAnswer)),
-                              )),
-                          ViewDeckFace(
-                            deckCard: cardToReview,
-                            questionImageDataBytes: Uint8List(0),
-                            showImageFromMemory: false,
-                          ),
-                          Visibility(
-                              visible: cardToReview.type == CardType.typeIn,
-                              child: Column(
-                                children: [
-                                  const SizedBox(height: 10),
-                                  TextFormField(
-                                    minLines: 3,
-                                    maxLines: 6,
-                                    decoration: InputDecoration(
-                                      border: const OutlineInputBorder(),
-                                      hintText: LanguageService.translation(context).writeYourAnswerHere,
-                                    ),
-                                  ),
-                                ],
-                              )),
-                          const SizedBox(height: 10),
-                          Visibility(
-                            visible: showAnswer || cardToReview.type == CardType.quiz,
-                            child: ViewDeckBack(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Visibility(
+                                visible: !showAnswer && cardToReview.timeToAnswer.inMilliseconds > 0,
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 5, 0, 10),
+                                  child: Text(LanguageService.translation(context).timeToAnswer +
+                                      convertSecondsToMinutesAndSecondsString(_timeRemainingToAnswer)),
+                                )),
+                            ViewDeckFace(
                               deckCard: cardToReview,
-                              answerImageDataBytes: Uint8List(0),
+                              questionImageDataBytes: Uint8List(0),
                               showImageFromMemory: false,
-                              answerOptions: getQuizCardDecodedAnswer(cardToReview.answer),
-                              correctAnswerOption: cardToReview.answerCorrectOptionIndex!,
-                              selectAnswerCallback: revealAnswer,
                             ),
-                          ),
-                        ],
+                            Visibility(
+                                visible: cardToReview.type == CardType.typeIn,
+                                child: Column(
+                                  children: [
+                                    const SizedBox(height: 10),
+                                    TextFormField(
+                                      minLines: 1,
+                                      maxLines: 6,
+                                      decoration: InputDecoration(
+                                        border: const OutlineInputBorder(),
+                                        hintText: LanguageService.translation(context).writeYourAnswerHere,
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                            const SizedBox(height: 10),
+                            Visibility(
+                              visible: showAnswer || cardToReview.type == CardType.quiz,
+                              child: ViewDeckBack(
+                                deckCard: cardToReview,
+                                answerImageDataBytes: Uint8List(0),
+                                showImageFromMemory: false,
+                                answerOptions: getQuizCardDecodedAnswer(cardToReview.answer),
+                                correctAnswerOption: cardToReview.answerCorrectOptionIndex!,
+                                selectAnswerCallback: revealAnswer,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

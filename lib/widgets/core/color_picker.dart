@@ -74,7 +74,7 @@ var _colorOptions = ThemeColor.values
         ])))
     .toList();
 
-var _colorOptionsWithoutWhite = (ThemeColor.values..remove(ThemeColor.white))
+var _colorOptionsWithoutWhite = (ThemeColor.values.toList()..remove(ThemeColor.white))
     .map((e) => DropdownMenuItem(
         value: e.toColor,
         child: Row(children: [

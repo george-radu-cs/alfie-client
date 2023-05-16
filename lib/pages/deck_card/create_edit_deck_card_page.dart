@@ -352,7 +352,6 @@ class _CreateEditDeckCardPageState extends State<CreateEditDeckCardPage> {
 
     try {
       setState(() => _loading = true);
-      await Future.delayed(const Duration(seconds: 2));
 
       String authToken = userProvider.user.token!;
       MathOcrResponse response = await MathOcrClient.instance.convertImageToTex(editedImage, authToken);
