@@ -102,66 +102,6 @@ class AlfieClient extends $grpc.Client {
       ($0.DeleteUnusedMediaFilesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.DeleteUnusedMediaFilesReply.fromBuffer(value));
-  static final _$addMarketDeck =
-      $grpc.ClientMethod<$0.AddMarketDeckRequest, $0.AddMarketDeckReply>(
-          '/alfie.protobuf.Alfie/AddMarketDeck',
-          ($0.AddMarketDeckRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.AddMarketDeckReply.fromBuffer(value));
-  static final _$updateMarketDeck =
-      $grpc.ClientMethod<$0.UpdateMarketDeckRequest, $0.UpdateMarketDeckReply>(
-          '/alfie.protobuf.Alfie/UpdateMarketDeck',
-          ($0.UpdateMarketDeckRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.UpdateMarketDeckReply.fromBuffer(value));
-  static final _$deleteMarketDeck =
-      $grpc.ClientMethod<$0.DeleteMarketDeckRequest, $0.DeleteMarketDeckReply>(
-          '/alfie.protobuf.Alfie/DeleteMarketDeck',
-          ($0.DeleteMarketDeckRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.DeleteMarketDeckReply.fromBuffer(value));
-  static final _$getMarketDecks =
-      $grpc.ClientMethod<$0.GetMarketDeckRequest, $0.GetMarketDeckReply>(
-          '/alfie.protobuf.Alfie/GetMarketDecks',
-          ($0.GetMarketDeckRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.GetMarketDeckReply.fromBuffer(value));
-  static final _$getPopularMarketDecks = $grpc.ClientMethod<
-          $0.GetPopularMarketDecksRequest, $0.GetPopularMarketDecksReply>(
-      '/alfie.protobuf.Alfie/GetPopularMarketDecks',
-      ($0.GetPopularMarketDecksRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) =>
-          $0.GetPopularMarketDecksReply.fromBuffer(value));
-  static final _$getMarketDeck =
-      $grpc.ClientMethod<$0.GetMarketDeckRequest, $0.GetMarketDeckReply>(
-          '/alfie.protobuf.Alfie/GetMarketDeck',
-          ($0.GetMarketDeckRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.GetMarketDeckReply.fromBuffer(value));
-  static final _$getMyMarketDecks =
-      $grpc.ClientMethod<$0.GetMyMarketDecksRequest, $0.GetMyMarketDecksReply>(
-          '/alfie.protobuf.Alfie/GetMyMarketDecks',
-          ($0.GetMyMarketDecksRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.GetMyMarketDecksReply.fromBuffer(value));
-  static final _$addMarketDeckReview = $grpc.ClientMethod<
-          $0.AddMarketDeckReviewRequest, $0.AddMarketDeckReviewReply>(
-      '/alfie.protobuf.Alfie/AddMarketDeckReview',
-      ($0.AddMarketDeckReviewRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) =>
-          $0.AddMarketDeckReviewReply.fromBuffer(value));
-  static final _$updateMarketDeckReview = $grpc.ClientMethod<
-          $0.UpdateMarketDeckReviewRequest, $0.UpdateMarketDeckReviewReply>(
-      '/alfie.protobuf.Alfie/UpdateMarketDeckReview',
-      ($0.UpdateMarketDeckReviewRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) =>
-          $0.UpdateMarketDeckReviewReply.fromBuffer(value));
-  static final _$deleteMarketDeckReview = $grpc.ClientMethod<
-          $0.DeleteMarketDeckReviewRequest, $0.DeleteMarketDeckReviewReply>(
-      '/alfie.protobuf.Alfie/DeleteMarketDeckReview',
-      ($0.DeleteMarketDeckReviewRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) =>
-          $0.DeleteMarketDeckReviewReply.fromBuffer(value));
 
   AlfieClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -256,68 +196,6 @@ class AlfieClient extends $grpc.Client {
       $0.DeleteUnusedMediaFilesRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteUnusedMediaFiles, request,
-        options: options);
-  }
-
-  $grpc.ResponseFuture<$0.AddMarketDeckReply> addMarketDeck(
-      $0.AddMarketDeckRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$addMarketDeck, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UpdateMarketDeckReply> updateMarketDeck(
-      $0.UpdateMarketDeckRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateMarketDeck, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.DeleteMarketDeckReply> deleteMarketDeck(
-      $0.DeleteMarketDeckRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$deleteMarketDeck, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.GetMarketDeckReply> getMarketDecks(
-      $0.GetMarketDeckRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getMarketDecks, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.GetPopularMarketDecksReply> getPopularMarketDecks(
-      $0.GetPopularMarketDecksRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getPopularMarketDecks, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.GetMarketDeckReply> getMarketDeck(
-      $0.GetMarketDeckRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getMarketDeck, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.GetMyMarketDecksReply> getMyMarketDecks(
-      $0.GetMyMarketDecksRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getMyMarketDecks, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.AddMarketDeckReviewReply> addMarketDeckReview(
-      $0.AddMarketDeckReviewRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$addMarketDeckReview, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UpdateMarketDeckReviewReply> updateMarketDeckReview(
-      $0.UpdateMarketDeckReviewRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateMarketDeckReview, request,
-        options: options);
-  }
-
-  $grpc.ResponseFuture<$0.DeleteMarketDeckReviewReply> deleteMarketDeckReview(
-      $0.DeleteMarketDeckReviewRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$deleteMarketDeckReview, request,
         options: options);
   }
 }
@@ -452,96 +330,6 @@ abstract class AlfieServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.DeleteUnusedMediaFilesRequest.fromBuffer(value),
         ($0.DeleteUnusedMediaFilesReply value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$0.AddMarketDeckRequest, $0.AddMarketDeckReply>(
-            'AddMarketDeck',
-            addMarketDeck_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.AddMarketDeckRequest.fromBuffer(value),
-            ($0.AddMarketDeckReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UpdateMarketDeckRequest,
-            $0.UpdateMarketDeckReply>(
-        'UpdateMarketDeck',
-        updateMarketDeck_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.UpdateMarketDeckRequest.fromBuffer(value),
-        ($0.UpdateMarketDeckReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.DeleteMarketDeckRequest,
-            $0.DeleteMarketDeckReply>(
-        'DeleteMarketDeck',
-        deleteMarketDeck_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.DeleteMarketDeckRequest.fromBuffer(value),
-        ($0.DeleteMarketDeckReply value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$0.GetMarketDeckRequest, $0.GetMarketDeckReply>(
-            'GetMarketDecks',
-            getMarketDecks_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.GetMarketDeckRequest.fromBuffer(value),
-            ($0.GetMarketDeckReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetPopularMarketDecksRequest,
-            $0.GetPopularMarketDecksReply>(
-        'GetPopularMarketDecks',
-        getPopularMarketDecks_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.GetPopularMarketDecksRequest.fromBuffer(value),
-        ($0.GetPopularMarketDecksReply value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$0.GetMarketDeckRequest, $0.GetMarketDeckReply>(
-            'GetMarketDeck',
-            getMarketDeck_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.GetMarketDeckRequest.fromBuffer(value),
-            ($0.GetMarketDeckReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetMyMarketDecksRequest,
-            $0.GetMyMarketDecksReply>(
-        'GetMyMarketDecks',
-        getMyMarketDecks_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.GetMyMarketDecksRequest.fromBuffer(value),
-        ($0.GetMyMarketDecksReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.AddMarketDeckReviewRequest,
-            $0.AddMarketDeckReviewReply>(
-        'AddMarketDeckReview',
-        addMarketDeckReview_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.AddMarketDeckReviewRequest.fromBuffer(value),
-        ($0.AddMarketDeckReviewReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UpdateMarketDeckReviewRequest,
-            $0.UpdateMarketDeckReviewReply>(
-        'UpdateMarketDeckReview',
-        updateMarketDeckReview_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.UpdateMarketDeckReviewRequest.fromBuffer(value),
-        ($0.UpdateMarketDeckReviewReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.DeleteMarketDeckReviewRequest,
-            $0.DeleteMarketDeckReviewReply>(
-        'DeleteMarketDeckReview',
-        deleteMarketDeckReview_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.DeleteMarketDeckReviewRequest.fromBuffer(value),
-        ($0.DeleteMarketDeckReviewReply value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.RegisterReply> register_Pre(
@@ -629,64 +417,6 @@ abstract class AlfieServiceBase extends $grpc.Service {
     return deleteUnusedMediaFiles(call, await request);
   }
 
-  $async.Future<$0.AddMarketDeckReply> addMarketDeck_Pre($grpc.ServiceCall call,
-      $async.Future<$0.AddMarketDeckRequest> request) async {
-    return addMarketDeck(call, await request);
-  }
-
-  $async.Future<$0.UpdateMarketDeckReply> updateMarketDeck_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.UpdateMarketDeckRequest> request) async {
-    return updateMarketDeck(call, await request);
-  }
-
-  $async.Future<$0.DeleteMarketDeckReply> deleteMarketDeck_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.DeleteMarketDeckRequest> request) async {
-    return deleteMarketDeck(call, await request);
-  }
-
-  $async.Future<$0.GetMarketDeckReply> getMarketDecks_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.GetMarketDeckRequest> request) async {
-    return getMarketDecks(call, await request);
-  }
-
-  $async.Future<$0.GetPopularMarketDecksReply> getPopularMarketDecks_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.GetPopularMarketDecksRequest> request) async {
-    return getPopularMarketDecks(call, await request);
-  }
-
-  $async.Future<$0.GetMarketDeckReply> getMarketDeck_Pre($grpc.ServiceCall call,
-      $async.Future<$0.GetMarketDeckRequest> request) async {
-    return getMarketDeck(call, await request);
-  }
-
-  $async.Future<$0.GetMyMarketDecksReply> getMyMarketDecks_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.GetMyMarketDecksRequest> request) async {
-    return getMyMarketDecks(call, await request);
-  }
-
-  $async.Future<$0.AddMarketDeckReviewReply> addMarketDeckReview_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.AddMarketDeckReviewRequest> request) async {
-    return addMarketDeckReview(call, await request);
-  }
-
-  $async.Future<$0.UpdateMarketDeckReviewReply> updateMarketDeckReview_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.UpdateMarketDeckReviewRequest> request) async {
-    return updateMarketDeckReview(call, await request);
-  }
-
-  $async.Future<$0.DeleteMarketDeckReviewReply> deleteMarketDeckReview_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.DeleteMarketDeckReviewRequest> request) async {
-    return deleteMarketDeckReview(call, await request);
-  }
-
   $async.Future<$0.RegisterReply> register(
       $grpc.ServiceCall call, $0.RegisterRequest request);
   $async.Future<$0.VerifyUserAccountReply> verifyUserAccount(
@@ -718,24 +448,4 @@ abstract class AlfieServiceBase extends $grpc.Service {
           $0.CreateMediaFilesDownloadURLsRequest request);
   $async.Future<$0.DeleteUnusedMediaFilesReply> deleteUnusedMediaFiles(
       $grpc.ServiceCall call, $0.DeleteUnusedMediaFilesRequest request);
-  $async.Future<$0.AddMarketDeckReply> addMarketDeck(
-      $grpc.ServiceCall call, $0.AddMarketDeckRequest request);
-  $async.Future<$0.UpdateMarketDeckReply> updateMarketDeck(
-      $grpc.ServiceCall call, $0.UpdateMarketDeckRequest request);
-  $async.Future<$0.DeleteMarketDeckReply> deleteMarketDeck(
-      $grpc.ServiceCall call, $0.DeleteMarketDeckRequest request);
-  $async.Future<$0.GetMarketDeckReply> getMarketDecks(
-      $grpc.ServiceCall call, $0.GetMarketDeckRequest request);
-  $async.Future<$0.GetPopularMarketDecksReply> getPopularMarketDecks(
-      $grpc.ServiceCall call, $0.GetPopularMarketDecksRequest request);
-  $async.Future<$0.GetMarketDeckReply> getMarketDeck(
-      $grpc.ServiceCall call, $0.GetMarketDeckRequest request);
-  $async.Future<$0.GetMyMarketDecksReply> getMyMarketDecks(
-      $grpc.ServiceCall call, $0.GetMyMarketDecksRequest request);
-  $async.Future<$0.AddMarketDeckReviewReply> addMarketDeckReview(
-      $grpc.ServiceCall call, $0.AddMarketDeckReviewRequest request);
-  $async.Future<$0.UpdateMarketDeckReviewReply> updateMarketDeckReview(
-      $grpc.ServiceCall call, $0.UpdateMarketDeckReviewRequest request);
-  $async.Future<$0.DeleteMarketDeckReviewReply> deleteMarketDeckReview(
-      $grpc.ServiceCall call, $0.DeleteMarketDeckReviewRequest request);
 }

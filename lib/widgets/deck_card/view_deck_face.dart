@@ -75,10 +75,9 @@ class _ViewDeckFaceState extends State<ViewDeckFace> {
           return Expanded(
             flex: -1,
             child: Container(
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minWidth: double.infinity,
                 minHeight: 0,
-                maxHeight: MediaQuery.of(context).size.height * .4,
               ),
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(

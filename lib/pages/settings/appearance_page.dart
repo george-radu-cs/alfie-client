@@ -3,6 +3,7 @@ import 'package:alfie/services/language_service.dart';
 import 'package:alfie/services/settings_provider.dart';
 import 'package:alfie/services/theme_service.dart';
 import 'package:alfie/utils/string.dart';
+import 'package:alfie/widgets/core/color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -107,15 +108,11 @@ class _AppearancePageState extends State<AppearancePage> {
                     ],
                   ),
                   Consumer<SettingsProvider>(
-                    builder: (context, settingsProvider, child) => DropdownButton(
-                      value: settingsProvider.settings.themeColor,
-                      items: (ThemeColor.values.toList()..remove(ThemeColor.white))
-                          .map((e) => DropdownMenuItem(value: e.name, child: Text(e.name.toTitleCase)))
-                          .toList(),
-                      onChanged: (newThemeColor) async {
-                        if (newThemeColor != null) {
-                          await settingsProvider.updateThemeColor(newThemeColor.toThemeColor);
-                        }
+                    builder: (context, settingsProvider, child) => ColorPicker(
+                      includeWhiteColor: false,
+                      selectedColor: settingsProvider.settings.themeColor.toThemeColor.toColor,
+                      onColorChanged: (Color newThemeColor) async {
+                        await settingsProvider.updateThemeColor(newThemeColor.toThemeColor);
                       },
                     ),
                   ),
