@@ -1,9 +1,13 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:alfie/api/grpc/grpc_client.dart';
 import 'package:alfie/models/theme_color.dart';
 import 'package:alfie/services/settings_provider.dart';
 import 'package:alfie/services/theme_service.dart';
 import 'package:alfie/services/user_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -15,6 +19,9 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  ByteData data = await PlatformAssetBundle().load('assets/ca/alfie-cloud-services.crt');
+  SecurityContext.defaultContext.setTrustedCertificatesBytes(data.buffer.asUint8List());
 
   await dotenv.load(fileName: ".env");
 

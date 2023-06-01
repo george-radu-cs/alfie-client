@@ -44,3 +44,25 @@ Place the certificate for ssl comunication in the `assets/ca` directory and name
 ## For adding a new language
 
 Multiple language definitions can be found in the `lib/l10n` directory.
+
+## Create prod build
+
+Signing
+
+```bash
+keytool -genkey -v -keystore ./android/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+```
+
+Clean & build
+
+```bash
+flutter clean
+flutter build appbundle
+```
+
+Install on device
+
+```bash
+bundletool build-apks --bundle=app-release.aab --output=app-release.apks
+bundletool install-apks --apks=app-release.apks
+```
