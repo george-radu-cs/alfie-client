@@ -6,6 +6,28 @@ Client in Flutter for the Alfie project.
 
 The cloud services is a separate repo. It can be found [here](https://github.com/george-radu-cs/alfie-cloud-services).
 
+## Presentation images
+
+### Examples of ui
+
+<div>
+    <img align="middle" src="./assets/alfie-cartonase.png" alt="alfie-cartonase" width="900" />
+    <br/>
+    <br/>
+    <img align="middle" src="./assets/alfie-ui.png" alt="alfie-ui" width="900"/>
+    <br/>
+    <br/>
+    <div style="display:flex; flex-direction:row; align-items:start; justify-content:start;">
+        <img src="./assets/statistics-barline.png" alt="statistics-barline" width="300"/>
+        <img src="./assets/statistics-piechart.png" alt="statistics-piechart" width="300"/>
+        <img src="./assets/statistics-timeline.png" alt="statistics-timeline" width="300"/>
+    </div>
+</div>
+
+### Examples of mail integrations
+
+<img align="middle" src="./assets/alfie-emails.png" alt="alfie-emails" width="900"/>
+
 ## Environment variables
 
 ```bash
